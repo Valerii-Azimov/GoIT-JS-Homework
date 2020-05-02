@@ -1,33 +1,26 @@
-let input;
+const yourNumber = 'Введите число';
+const NotAnuber = 'Было введено не число, попробуйте еще раз';
 const numbers = [];
 let total = 0;
+let input;
 
-while (true) {
-  let input = prompt('Введите число');
+while (input !== null) {
+  input = prompt(yourNumber, 0);
 
-  if (input >= 1) {
-    input = Number(input);
-    numbers.push(input);
-    console.log(numbers);
-  }
   if (input === null) {
     break;
-    for (let i = 0; i < numbers.length; i++) {
-      total += numbers[i];
-      console.log(total);
-    }
   }
-  //   for (number of numbers) {
-  //     total += number;
-  //   }
-  //   console.log(total);
-  //   break;
-  // }
-}
+  const userNumber = +input;
 
-// while (input !== null) {
-//   input = prompt('Введите число');
-//   // input = Number(input);
-//   numbers.push(input);
-// }
-// console.log(numbers);
+  if (Number.isNaN(userNumber)) {
+    alert(NO_NUMBER);
+  } else {
+    numbers.push(userNumber);
+  }
+}
+if (numbers.length > 0) {
+  for (let i = 0; i < numbers.length; i += 1) {
+    total += numbers[i];
+  }
+  console.log('Общая сумма чисел равна', total);
+}
