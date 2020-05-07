@@ -6,16 +6,13 @@ const products = [
 ];
 
 const getAllPropValues = function (arr, prop) {
-  let findValue = [];
+  let result = [];
   for (const a of arr) {
-    if (prop === 'name') {
-      findValue.push(a.name);
-    }
-    if (prop === 'quantity') {
-      findValue.push(a.quantity);
+    if (prop in a) {
+      result.push(a[prop]);
     }
   }
-  return findValue;
+  return result;
 };
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.

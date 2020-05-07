@@ -1,14 +1,14 @@
 const findBestEmployee = function (employees) {
-  const people = Object.entries(employees);
+  const keys = Object.keys(employees);
+  const values = Object.values(employees);
+  let bestValue = values[0];
 
-  let bestEmployee = people[0];
-
-  for (let i = 1; i < people.length; i += 1) {
-    if (people[i] > bestEmployee) {
-      bestEmployee = people[i];
+  for (let i = 1; i < values.length; i += 1) {
+    if (values[i] > bestValue) {
+      bestValue = values[i];
     }
   }
-  return `${bestEmployee[0]}`;
+  return keys[values.indexOf(bestValue)];
 };
 
 /*
