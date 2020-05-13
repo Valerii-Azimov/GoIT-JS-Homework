@@ -11,6 +11,28 @@ const findBestEmployee = function (employees) {
   return keys[values.indexOf(bestValue)];
 };
 
+//Альтернативное решение задачи
+
+// const findBestEmployee = employees => {
+// const array = Object.entries(employees);
+// let max = 0;
+// let employer = '';
+// for (let index = 0; index < array.length; index++) {
+// const key = array[index][0];
+// const value = array[index][1];
+// if (value > max) {
+// max = value;
+// employer = key;
+// }
+// }
+// return employer;
+// };
+
+// не нужно лишний перебор массива делать с помощью
+// return keys[values.indexOf(bestValue)];
+
+
+
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
