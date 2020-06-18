@@ -23,20 +23,27 @@ const ingredients = [
 //   itemRef.append(ingredient);
 //   console.log(itemRef);
 // });
+const ingredientsRef = document.querySelector('#ingredients');
 
-const createProductList = ingredients => {
-  const ingredientsRef = document.querySelector('#ingredients');
+const items = ingredients.map(e => {
+  const li = document.createElement('li');
+  li.textContent = e;
+  return li;
+});
+ingredientsRef.append(...items);
+// const createProductList = ingredients => {
+//   const ingredientsRef = document.querySelector('#ingredients');
 
-  ingredients.forEach(ingredient => {
-    const itemRef = document.createElement('li');
-    // console.log(ingredient);
-    itemRef.append(ingredient);
-    return ingredientsRef.appendChild(itemRef);
-  });
-  return ingredientsRef;
-};
+//   ingredients.forEach(ingredient => {
+//     const itemRef = document.createElement('li');
+//     // console.log(ingredient);
+//     itemRef.append(ingredient);
+//     return ingredientsRef.appendChild(itemRef);
+//   });
+//   return ingredientsRef;
+// };
 
-console.log(createProductList(ingredients));
+// console.log(createProductList(ingredients));
 
 // const itemRef1 = document.createElement('li');
 // itemRef1.textContent = ingredients[0];

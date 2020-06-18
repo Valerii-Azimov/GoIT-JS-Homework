@@ -7,10 +7,12 @@ const lightboxImageRef = document.querySelector('.lightbox__image');
 const closeModalBtn = document.querySelector(
   'button[data-action="close-lightbox"]',
 );
+// const closeModalOverlay = document.querySelector('.lightbox__overlay');
 
 galleryRef.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
-
+// closeModalOverlay.addEventListener('click', closeModal);
+// console.log(event.target.nodeName);
 // console.dir(lightboxImageRef.src);
 
 const createGalery = user => {
@@ -41,11 +43,11 @@ function openModal(event) {
   }
   modalRef.classList.add('is-open');
   lightboxImageRef.src = event.target.dataSource;
-  console.log(lightboxImageRef.src);
+  // console.log(lightboxImageRef.src);
 }
 
 function closeModal(event) {
   modalRef.classList.remove('is-open');
   lightboxImageRef.src = '';
-  console.log(lightboxImageRef.src);
+  // console.log(lightboxImageRef.src);
 }

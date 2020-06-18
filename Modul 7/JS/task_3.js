@@ -18,20 +18,31 @@ const images = [
 
 // console.table(images);
 
-const createGalery = image => {
-  const conteinerRef = document.createElement('li');
+const createGalleryItem = ({ url, alt }) =>
+  `<li><img src="${url}" alt="${alt}"></li>`;
 
-  const ImageAltRef = document.createElement('img');
-  ImageAltRef.src = image.url;
-  ImageAltRef.alt = image.alt;
-  // console.dir(ImageAltRef);
-
-  conteinerRef.append(ImageAltRef);
-
-  return conteinerRef;
-};
-const galleryImages = images.map(image => createGalery(image));
+const galleryMarkup = images.reduce(
+  (acc, item) => acc + createGalleryItem(item),
+  '',
+);
 
 const galleryList = document.querySelector('#gallery');
+galleryList.insertAdjacentHTML('afterbegin', galleryMarkup);
 
-galleryList.append(...galleryImages);
+// const createGalery = image => {
+//   const conteinerRef = document.createElement('li');
+
+//   const ImageAltRef = document.createElement('img');
+//   ImageAltRef.src = image.url;
+//   ImageAltRef.alt = image.alt;
+//   // console.dir(ImageAltRef);
+
+//   conteinerRef.append(ImageAltRef);
+
+//   return conteinerRef;
+// };
+// const galleryImages = images.map(image => createGalery(image));
+
+// const galleryList = document.querySelector('#gallery');
+
+// galleryList.append(...galleryImages);
